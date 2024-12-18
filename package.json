@@ -4,14 +4,43 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "scripts/copy-env.sh development && nuxt dev",
+    "production": "scripts/copy-env.sh production && nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lintfix": "eslint --fix .",
+    "test": "vitest run --coverage",
+    "test:precommit": "vitest run --changed"
   },
   "dependencies": {
+    "@nuxt/ui": "2.20.0",
+    "@nuxtjs/i18n": "9.0.0-rc.2",
+    "@pinia/nuxt": "^0.9.0",
     "nuxt": "^3.14.1592",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.7.3",
+    "@nuxt/test-utils": "^3.14.3",
+    "@pinia/testing": "^0.1.6",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@vitest/coverage-v8": "^2.1.2",
+    "@vitest/ui": "^2.1.2",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "happy-dom": "^15.7.4",
+    "playwright-core": "^1.48.0",
+    "postcss": "^8.4.47",
+    "remove-attr": "^0.0.15",
+    "tailwindcss": "^3.4.13",
+    "typescript": "5.5.4",
+    "vitest": "^2.1.2"
   }
 }
