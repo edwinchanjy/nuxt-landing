@@ -4,7 +4,6 @@
   "printWidth": 100,
   "importOrder": [
     "assert",
-    "^@cognixus/(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^@vitejs/(.*)$",
     "vitest-mock-extended",

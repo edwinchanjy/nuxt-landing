@@ -1,5 +1,5 @@
 # Prerequisite
-To begin running/developing the project, you will need to install the correct Node.js and Yarn version.
+To begin running/developing the project, you will need to install the correct Node.js and bun version.
 
 You can find the version for both of them under package.json 'engines'.
 
@@ -33,21 +33,19 @@ nvm install your-node-version
 node --version
 ```
 
-# Installing Yarn
+# Installing bun
 
-The current version of Yarn can be acquired from package.json (currently 1.22.22).
+The current version of bun can be acquired from package.json (currently 1.22.22).
 
-To install the required version of Yarn:
+To install the required version of bun:
 
 ```bash
-# linux
-npm install -g yarn@your-yarn-version
+Refer to this documentation to install bun on your OS accordingly
 
-# windows
-npm install -g yarn@your-yarn-version
+https://bun.sh/docs/installation
 
-# check your yarn version
-yarn --version
+# check your bun version
+bun --version
 ```
 
 # Installing ESLint
@@ -58,10 +56,10 @@ yarn --version
 
 ```bash
 # ESLint
-yarn add --dev eslint
+bun add --dev eslint
 
 # @nuxt/eslint-config
-yarn add --dev @nuxt/eslint-config
+bun add --dev @nuxt/eslint-config
 ```
 
 #### Configuration:
@@ -96,7 +94,7 @@ Note: This is the default config, you can always update the rules accordingly to
 // package.json
 {
 "scripts":  {
-	"lint": "eslint .",
+	  "lint": "eslint .",
     "lintfix": "eslint --fix ."
 	}
 }
@@ -108,22 +106,22 @@ Note: This is the default config, you can always update the rules accordingly to
 
 ```bash
 # lint
-yarn lint
+bun lint
 ```
 
 2. Run the following command to fix the errors. Some warnings/errors might require developer to manually fix.
 
 ```bash
 # lintfix
-yarn lintfix
+bun lintfix
 ```
 
 3. If all the errors are fixed, running the command again should return success.
 
 ```bash
-yarn lint
+bun lint
 
-yarn run v1.22.22
+bun run v1.22.22
 $ eslint .
 Done in 1.30s.
 ```
@@ -196,7 +194,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
-yarn  install
+bun  install
 ```
 
 #### Development Server
@@ -204,11 +202,11 @@ yarn  install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-yarn dev
+bun dev
 
 OR
 
-yarn dev -o // to open the tab automatically
+bun dev -o // to open the tab automatically
 ```
 
 #### Production
@@ -216,13 +214,13 @@ yarn dev -o // to open the tab automatically
 Build the application for production:
 
 ```bash
-yarn build
+bun build
 ```
 
 #### Locally preview production build:
 
 ```bash
-yarn preview
+bun preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
@@ -256,13 +254,13 @@ After Vitest is fully set up, you can add these commands package.json.
 To run the tests, simply run this command in your terminal:
 
 ```bash
-yarn test
+bun test
 ```
 
 If you only want to run a single test file, you can run this command instead:
 
 ```bash
-yarn test <path-to-your-test-file>
+bun test <path-to-your-test-file>
 ```
 
 # Adding Tailwindcss
@@ -274,7 +272,7 @@ Tailwindcss is the preferred way to handle css, but is totally optional. If you 
 To add the rules, you need to first install the package 
 
 ```
-yarn add --dev eslint-plugin-tailwindcss
+bun add --dev eslint-plugin-tailwindcss
 ```
 
 Then you need to manually add the rules in the eslint.config.mjs

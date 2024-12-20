@@ -1,5 +1,7 @@
-// @ts-check
 import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import prettierPlugin from 'eslint-plugin-prettier'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 // @ts-expect-error missing types
 import tailwindcss from 'eslint-plugin-tailwindcss'
 
@@ -12,8 +14,8 @@ export default createConfigForNuxt({
       strict: true,
     },
   },
-}).append(
-  {
+})
+  .append({
     files: ['**/*.vue'],
     name: 'local/tailwindcss',
     plugins: {
@@ -24,11 +26,18 @@ export default createConfigForNuxt({
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
       'tailwindcss/enforces-shorthand': 'warn',
       'tailwindcss/no-contradicting-classname': 'warn',
-      'tailwindcss/no-custom-classname': 'error',
       'tailwindcss/no-unnecessary-arbitrary-value': 'warn',
     },
-  },
-)
+  })
+  .append({
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      ...eslintConfigPrettier.rules,
+      ...eslintPluginPrettierRecommended.rules,
+    },
+  })
   .override('nuxt/javascript', {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'debug'] }],

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Raleway Flex';
+    src: url(~/assets/fonts/RalewayFlex.woff2) format('woff2');
+    font-weight: 100 200 300 400 500 600 700 800 900;
+  }
+}
