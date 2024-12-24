@@ -6,7 +6,7 @@
     >
       <TopBar />
       <NuxtLayout>
-        <NuxtPage class="mx-12 max-w-7xl py-12 lg:mx-auto" />
+        <NuxtPage class="mx-12 max-w-7xl pb-36 pt-12 lg:mx-auto" />
       </NuxtLayout>
       <ScrollToTopButton />
     </div>

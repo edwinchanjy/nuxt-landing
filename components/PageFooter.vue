@@ -1,5 +1,5 @@
 <template>
-  <section class="footer">
+  <section id="footer" class="footer">
     <div class="mx-auto h-52">hahaha</div>
     <div class="bg-secondary-700 500 border-t px-6 py-1.5">
       <div class="mx-auto flex items-center justify-between">

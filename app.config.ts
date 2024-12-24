@@ -13,7 +13,7 @@ export default defineAppConfig({
         leaveActiveClass: 'duration-500',
       },
       default: {
-        class: 'pt-8 pb-4 px-0 mb-5 w-full bg-transparent text-xl',
+        class: 'pt-8 pb-4 px-0 mb-5 w-full bg-transparent text-xl font-semibold',
       },
     },
     button: {
