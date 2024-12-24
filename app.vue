@@ -19,13 +19,19 @@
 <script setup lang="ts">
 const route = useRoute()
 
+const { t } = useI18n()
+
 useHead({
-  title: computed(() => `${route.meta.title ? `${route.meta.title} - ` : ''}Nuxt Landing`),
+  title: computed(
+    () => `${route.meta.title ? `${t(route.meta.title as string)} - ` : ''}Nuxt Landing`,
+  ),
   meta: [
     {
       name: 'og:title',
       property: 'og:title',
-      content: computed(() => `${route.meta.title ? `${route.meta.title} - ` : ''}Nuxt Landing`),
+      content: computed(
+        () => `${route.meta.title ? `${t(route.meta.title as string)} - ` : ''}Nuxt Landing`,
+      ),
     },
   ],
 })

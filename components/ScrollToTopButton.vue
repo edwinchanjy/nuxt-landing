@@ -1,6 +1,6 @@
 <template>
   <UButton
-    class="absolute bottom-14 right-14 transition-all duration-300 hover:scale-125"
+    class="fixed bottom-14 right-14 transition-all duration-300 hover:scale-125"
     :class="{
       'opacity-0': scrollPosition < 100,
       'opacity-100': scrollPosition >= 100,

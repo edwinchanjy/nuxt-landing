@@ -1,12 +1,12 @@
 <template>
   <div>
-    <UAccordion class="animate-fade-in-up" color="primary" size="xl" :items="items" />
+    <UAccordion class="animate-fade-in-up" color="white" size="xl" :items="items" />
   </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-  title: 'FAQ',
+  title: 'faq',
   layout: 'common',
 })
 

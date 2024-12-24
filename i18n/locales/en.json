@@ -1,6 +1,9 @@
 {
   "home": "Home",
   "copyright": "© {year} Some Company Name",
-  "tnc": "Terms and Conditions",
+  "about": "About Us",
+  "faq": "FAQ",
+  "contact": "Contact",
+  "terms": "Terms and Conditions",
   "privacy": "Privacy Policy"
 }

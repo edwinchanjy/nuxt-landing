@@ -6,11 +6,12 @@
         <span class="text-white">{{ t('copyright', { year: new Date().getFullYear() }) }}</span>
         <div class="flex space-x-8">
           <button
-            v-for="item in Constant.FOOTER_MENU"
-            :key="item.title"
+            v-for="menuItem in Constant.FOOTER_MENU"
+            :key="menuItem.title"
             class="transition-all duration-300 ease-in-out hover:font-semibold"
+            @click="() => navigateTo(localePath(menuItem.path))"
           >
-            <span> {{ t(item.title) }}</span>
+            <span> {{ t(menuItem.title) }}</span>
           </button>
         </div>
       </div>
@@ -22,6 +23,7 @@
 import { Constant } from '~/constants'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <style scoped>

@@ -1,27 +1,27 @@
 export default {
   TOP_MENU: [
     {
-      title: 'Home',
+      title: 'home',
       path: '/',
     },
     {
-      title: 'About',
+      title: 'about',
       path: '/about',
     },
     {
-      title: 'FAQ',
+      title: 'faq',
       path: '/faq',
     },
     {
-      title: 'Contact',
+      title: 'contact',
       path: '/contact',
     },
   ],
 
   FOOTER_MENU: [
     {
-      title: 'tnc',
-      path: '/tnc',
+      title: 'terms',
+      path: '/terms',
     },
     {
       title: 'privacy',

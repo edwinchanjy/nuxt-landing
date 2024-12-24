@@ -59,6 +59,5 @@ export default defineNuxtConfig({
     lazy: false,
     langDir: 'locales',
     defaultLocale: 'en',
-    skipSettingLocaleOnNavigate: true,
   },
 })

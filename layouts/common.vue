@@ -9,7 +9,7 @@
           'animate-fade-in ': isTransitioning,
         }"
       >
-        {{ title }}
+        {{ t(title.toLowerCase()) }}
       </h1>
     </div>
     <slot />
@@ -17,9 +17,13 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 const route = useRoute()
 
-const title = computed(() => route.meta.title ?? '')
+const title = computed(() => {
+  return route.name ? (route.name as string).split('___')[0] : ''
+})
 
 const isTransitioning = ref(false)
 

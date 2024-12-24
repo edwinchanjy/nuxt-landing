@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <p>this is the about page</p>
-  </div>
+  <div>this is the terms page</div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-  title: 'about',
+  title: 'terms',
   layout: 'common',
 })
 </script>

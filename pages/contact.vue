@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  title: 'Contact',
+  title: 'contact',
   layout: 'common',
 })
 </script>
