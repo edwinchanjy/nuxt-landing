@@ -1,7 +1,6 @@
 import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 // @ts-expect-error missing types
 import tailwindcss from 'eslint-plugin-tailwindcss'
 
@@ -35,7 +34,6 @@ export default createConfigForNuxt({
     },
     rules: {
       ...eslintConfigPrettier.rules,
-      ...eslintPluginPrettierRecommended.rules,
     },
   })
   .override('nuxt/javascript', {

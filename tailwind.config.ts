@@ -60,6 +60,7 @@ export default {
       animation: {
         'fade-in-up': 'fade-in-up 1.0s ease-in-out',
         'infinite-scroll': 'infinite-scroll 15s linear infinite',
+        'fade-in': 'fade-in 0.5s ease-in-out',
       },
       keyframes: {
         'infinite-scroll': {
@@ -75,6 +76,14 @@ export default {
           '100%': {
             position: 'relative',
             bottom: '0px',
+            opacity: '1.0',
+          },
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0.0',
+          },
+          '100%': {
             opacity: '1.0',
           },
         },

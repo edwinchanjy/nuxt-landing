@@ -2,7 +2,7 @@ import removeAttr from 'remove-attr'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n'], // TODO: fix language file import error
+  modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n'],
   devtools: { enabled: true },
   app: {
     head: {
@@ -19,6 +19,8 @@ export default defineNuxtConfig({
         },
       ],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
   css: ['~/assets/css/main.css'],
   colorMode: {
@@ -48,5 +50,15 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-GB', file: 'en.json' },
+      { code: 'zh', language: 'zh-CN', file: 'zh.json' },
+    ],
+    lazy: false,
+    langDir: 'locales',
+    defaultLocale: 'en',
+    skipSettingLocaleOnNavigate: true,
   },
 })

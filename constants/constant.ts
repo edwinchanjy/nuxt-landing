@@ -17,4 +17,15 @@ export default {
       path: '/contact',
     },
   ],
+
+  FOOTER_MENU: [
+    {
+      title: 'tnc',
+      path: '/tnc',
+    },
+    {
+      title: 'privacy',
+      path: '/privacy',
+    },
+  ],
 }

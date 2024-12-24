@@ -2,9 +2,15 @@
   <div class="flex space-x-8">
     <button
       v-for="menuItem in Constant.TOP_MENU"
-      id="title"
       :key="menuItem.title"
-      class="w-16 text-lg"
+      class="after:contents-[''] relative w-16 text-lg transition-all duration-300 ease-in-out after:absolute
+        after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-center after:rounded-full
+        after:bg-lavender-500 after:opacity-100 after:transition-all after:duration-300 hover:font-bold
+        hover:after:scale-100 focus:after:scale-100"
+      :class="{
+        'font-bold after:scale-100': isCurrentPage(menuItem.path),
+        'font-medium after:scale-0': !isCurrentPage(menuItem.path),
+      }"
       @click="() => navigateTo(localePath(menuItem.path))"
     >
       <span> {{ menuItem.title }}</span>
@@ -16,42 +22,7 @@
 import { Constant } from '~/constants'
 
 const localePath = useLocalePath()
+const route = useRoute()
+
+const isCurrentPage = (path: string) => path === route.path
 </script>
-
-<style scoped>
-#title {
-  position: relative;
-  transition: font-weight 0.2s ease-in-out;
-  font-weight: 500;
-}
-
-#title:hover {
-  font-weight: 700;
-}
-
-#title::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #b5a6f1;
-  border-radius: 1000px;
-  opacity: 0;
-  transition:
-    opacity 300ms,
-    transform 300ms;
-}
-
-#title::after {
-  opacity: 1;
-  transform: scale(0);
-  transform-origin: center;
-}
-
-#title:hover::after,
-#title:focus::after {
-  transform: scale(1);
-}
-</style>

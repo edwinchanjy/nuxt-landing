@@ -1,10 +1,12 @@
 <template>
   <div class="scroll-container mx-auto" :style="`width: ${images.length * 156}px`">
     <div
-      class="inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      class="inline-flex w-full flex-nowrap overflow-hidden
+        [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
     >
       <ul
-        class="flex h-32 animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-24 [&_img]:rounded-lg [&_li]:mx-8"
+        class="flex h-32 animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-24
+          [&_img]:rounded-lg [&_li]:mx-8"
       >
         <li
           v-for="(logo, index) in images"
@@ -22,7 +24,8 @@
         </li>
       </ul>
       <ul
-        class="flex h-32 animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-24 [&_img]:rounded-lg [&_li]:mx-8"
+        class="flex h-32 animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-24
+          [&_img]:rounded-lg [&_li]:mx-8"
         aria-hidden="true"
       >
         <li
@@ -66,6 +69,12 @@ const onMouseLeave = () => {
 </script>
 
 <style scoped>
+.scroll-container {
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+  }
+}
+
 .scroll-container:hover .animate-infinite-scroll {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
