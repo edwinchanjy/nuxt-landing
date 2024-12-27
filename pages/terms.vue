@@ -1,5 +1,7 @@
 <template>
-  <div>this is the terms page</div>
+  <div class="prose dark:prose-invert">
+    <ContentDoc :path="localePath('/terms')" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -7,4 +9,6 @@ definePageMeta({
   title: 'terms',
   layout: 'common',
 })
+
+const localePath = useLocalePath()
 </script>

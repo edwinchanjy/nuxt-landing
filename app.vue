@@ -1,8 +1,7 @@
 <template>
   <div>
     <div
-      class="via-secondary-400 relative h-full min-h-screen bg-gradient-to-tr from-[#161a25] via-[#34224b]
-        to-[#0f172a]"
+      class="relative h-full min-h-screen bg-gradient-to-tr from-[#161a25] via-[#34224b] to-[#0f172a]"
     >
       <TopBar />
       <NuxtLayout>

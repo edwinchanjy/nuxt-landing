@@ -1,19 +1,19 @@
 <template>
   <div class="space-y-36">
     <HomeHeader />
-    <CommonInfiniteCarousel :images="images" />
+    <CommonInfiniteCarousel :items="items" @on-item-clicked="onImageClick" />
   </div>
 </template>
 
 <script setup lang="ts">
-import CS2Logo from '~/assets/images/cs2.png'
-import DotaLogo from '~/assets/images/dota.png'
-import ForniteLogo from '~/assets/images/fortnite.png'
-import LOLLogo from '~/assets/images/lol.png'
-import OW2Logo from '~/assets/images/ow2.png'
-import ValorantLogo from '~/assets/images/valorant.png'
+import { Constant } from '~/constants'
 
-const images = [CS2Logo, DotaLogo, ForniteLogo, LOLLogo, OW2Logo, ValorantLogo]
+const localePath = useLocalePath()
+
+const items = [...Constant.GAMES_CAROUSEL_ITEMS]
+
+const onImageClick = (index: number) =>
+  navigateTo(localePath(localePath('/game') + `/${items[index].id}`))
 </script>
 
 <style scoped></style>

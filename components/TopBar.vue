@@ -9,7 +9,7 @@
         @click="navigateTo($localePath('/'))"
       />
       <TopBarNavigationMenu />
-      <!-- <TopBarLocaleButton /> -->
+      <TopBarLocaleButton />
     </div>
   </header>
 </template>

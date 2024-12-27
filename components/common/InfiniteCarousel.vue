@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-container mx-auto" :style="`width: ${images.length * 156}px`">
+  <div class="scroll-container mx-auto" :style="`width: ${items.length * 156}px`">
     <div
       class="inline-flex w-full flex-nowrap overflow-hidden
         [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
@@ -9,17 +9,18 @@
           [&_img]:rounded-lg [&_li]:mx-8"
       >
         <li
-          v-for="(logo, index) in images"
+          v-for="(item, index) in items"
           :key="index"
           @mouseenter="(_) => onMouseEnter(index)"
           @mouseleave="onMouseLeave"
         >
           <img
-            :src="logo"
-            :alt="logo"
+            :src="item.image"
+            :alt="item.title"
             :class="{
               'blur-sm': isFocused && index !== selectedIndex,
             }"
+            @click="() => emits('on-item-clicked', index)"
           />
         </li>
       </ul>
@@ -29,17 +30,18 @@
         aria-hidden="true"
       >
         <li
-          v-for="(logo, index) in images"
+          v-for="(item, index) in items"
           :key="index"
           @mouseenter="(_) => onMouseEnter(index)"
           @mouseleave="onMouseLeave"
         >
           <img
-            :src="logo"
-            :alt="logo"
+            :src="item.image"
+            :alt="item.title"
             :class="{
               'blur-sm': isFocused && index !== selectedIndex,
             }"
+            @click="() => emits('on-item-clicked', index)"
           />
         </li>
       </ul>
@@ -48,9 +50,13 @@
 </template>
 
 <script setup lang="ts">
+import type { CarouselItem } from '~/data/interfaces'
+
 defineProps<{
-  images: string[]
+  items: CarouselItem[]
 }>()
+
+const emits = defineEmits(['on-item-clicked'])
 
 const isFocused = ref(false)
 const selectedIndex = ref(-1) // init as -1 to prevent unwanted behavior

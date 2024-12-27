@@ -2,7 +2,7 @@ import removeAttr from 'remove-attr'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n'],
+  modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n', '@nuxt/content'],
   devtools: { enabled: true },
   app: {
     head: {
@@ -25,6 +25,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   colorMode: {
     preference: 'dark',
+  },
+  content: {
+    contentHead: false,
   },
   compatibilityDate: '2024-12-18',
   vite: {
@@ -56,7 +59,7 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-GB', file: 'en.json' },
       { code: 'zh', language: 'zh-CN', file: 'zh.json' },
     ],
-    lazy: false,
+    lazy: true,
     langDir: 'locales',
     defaultLocale: 'en',
   },

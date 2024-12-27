@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex h-44 w-full items-center justify-center bg-black bg-opacity-10 text-center text-6xl font-bold
+      class="flex h-44 w-full items-center justify-center bg-black bg-opacity-30 text-center text-6xl font-bold
         uppercase tracking-wider"
     >
       <h1
@@ -21,9 +21,7 @@ const { t } = useI18n()
 
 const route = useRoute()
 
-const title = computed(() => {
-  return route.name ? (route.name as string).split('___')[0] : ''
-})
+const title = computed(() => (route.name ? (route.name as string).split('___')[0] : ''))
 
 const isTransitioning = ref(false)
 

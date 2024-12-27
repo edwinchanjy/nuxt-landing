@@ -26,5 +26,9 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
 
-const isCurrentPage = (path: string) => path === route.path
+const isCurrentPage = (path: string) => {
+  const trimmedPath = route.path.split('/')
+
+  return path === `/${trimmedPath[trimmedPath.length - 1]}`
+}
 </script>
